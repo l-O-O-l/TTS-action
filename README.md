@@ -6,7 +6,7 @@ It is an open-source (Apache License) free Text To Speech (TTS) service, that ta
 
 Samples are [Alice’s Adventures in Wonderland](https://github.com/l-O-O-l/TTS-action/issues/5), [The Tyger By William Blake](https://github.com/l-O-O-l/TTS-action/issues/2) and [Psalms](https://github.com/l-O-O-l/TTS-action/issues/4) . 
 
-Chinese sample []()
+Chinese sample [朱自清 背影](https://github.com/l-O-O-l/TTS-action/issues/11) [叶挺 囚歌](https://github.com/l-O-O-l/TTS-action/issues/10) [余光中 乡愁](https://github.com/l-O-O-l/TTS-action/issues/8) [关雎](https://github.com/l-O-O-l/TTS-action/issues/9)
 
 More ones can be found [here](https://github.com/l-O-O-l/TTS-action/issues?q=is%3Aissue+is%3Aclosed++TTS)
 

@@ -33,6 +33,11 @@ Since I have played with different TTS engines before, it only took me about two
 * Both Parakeet and ttskit are slow
 * There is also a runtime limitation for GitHub actions.
 
+### Other Projects
+* [中文 TTS docker tool](https://github.com/privapps/docker-ttskit/tree/tool)
+* [中文 TTS GitHub Action](https://github.com/privapps/docker-ttskit/tree/action)
+
+
 ### Donation
 ```
 bitcoin:bc1qc2rpn0x0lzv8gdgx8nvhsrkx3jm3s0kpql4tfk?time=1614371095

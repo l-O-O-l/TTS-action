@@ -29,6 +29,11 @@
 * Parakeet and ttskit 很慢
 * GitHub actions 有运行时间的限制
 
+### 相关项目
+* [中文 TTS docker tool](https://github.com/privapps/docker-ttskit/tree/tool)
+* [中文 TTS GitHub Action](https://github.com/privapps/docker-ttskit/tree/action)
+
+
 ### Donation
 ```
 bitcoin:bc1qc2rpn0x0lzv8gdgx8nvhsrkx3jm3s0kpql4tfk?time=1614371095

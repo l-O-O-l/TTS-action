@@ -2,7 +2,7 @@ name: TTS
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -13,33 +13,12 @@ jobs:
     if: startsWith(github.event.issue.title, 'TTS:')
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: DamianReeves/write-file-action@v1.0
-        with:
-            # The path to the file to write, any better place rather than /tmp ?
-            path: /tmp/__input__.txt
-            contents: ${{ github.event.issue.body }}
-      # check out dev
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          path: main
       # generate mp3
-      - name: Run a multi-line script
-        run: |
-          cd main
-          mv /tmp/__input__.txt .
-          sudo apt-get update -y
-          sudo apt-get install libsndfile1 unzip wget git lame 
-          wget -q https://github.com/l-O-O-l/TTS-action/releases/download/0/tacotron2_ljspeech_ckpt_0.3.zip >/dev/null ; unzip tacotron2_ljspeech_ckpt_0.3.zip &
-          wget -q https://github.com/l-O-O-l/TTS-action/releases/download/0/waveflow_ljspeech_ckpt_0.3.zip >/dev/null ;  unzip waveflow_ljspeech_ckpt_0.3.zip &
-          sudo pip install paddle-parakeet paddlepaddle scipy
-          git clone --depth 1 https://github.com/iclementine/Parakeet
-          cd Parakeet/examples/tacotron2
-          cp ../../../run.py .
-          wait
-          python run.py
-          lame __out__.wav 
-          mv __out__.mp3 ../../../../${{ github.event.issue.number }}.mp3
+      - uses: privapps/TTS-Parakeet@main
+        with:
+          text: ${{ github.event.issue.body }}
+          format: 'mp3'
+          content: ${{ github.event.issue.number }}.mp3
       # check out branch mp3
       - uses: actions/checkout@v2
         with:

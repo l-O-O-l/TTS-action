@@ -13,13 +13,13 @@ More ones can be found [here](https://github.com/l-O-O-l/TTS-action/issues?q=is%
 ## Usage
 Create a new issue start with `TTS:` (English best quality),  `TTS-F:` (English quick response) or `TTS-CN:` (Chinese Mandarin) with a body text. After a few minutes, the issue would be closed with a ready-to-download link of the audio.
 
-You can also choose 20+ different voices for `TTS-CN:` by using like `TTS-CN: 1$`, `TTS-CN: 30$` more information can be found at [docker/ttskit](https://github.com/privapps/docker-ttskit)
+You can also choose 20+ different voices for `TTS-CN:` by using like `TTS-CN: 1$`, `TTS-CN: 30$` more information can be found at [TTS-Mandarin](https://github.com/privapps/TTS-Mandarin)
 
 ## How
 This application uses all open-source projects and free services. There are three TTS engines. 
 * One is based on https://github.com/iclementine/Parakeet, which is arguably the best open source TTS engine that I can find at the moment. Yes, it is slow, but yields much better quality. (If you find a better one/balance, please let me know). 
 * The other one is https://github.com/MycroftAI/mimic1 , it is faster and more robotic. 
-* The Chinese Mandarin is using https://github.com/KuangDD/ttskit, it has great voice with 20+ different voice
+* The Chinese Mandarin is using https://github.com/ranchlai/mandarin-tts, it has great voice with 50+ different voice
 
 Once an issue is created, GitHub action would be triggered: It first reads the body of the issue; next either use pre-trained data powered by Python Machine Learning (Parakeet), or built-in CPP voice (Mimic) to create the audio; then it compresses wave to mp3 and merges to mp3 branch; Finally, it links to the issue and closes the issue.
 
@@ -30,12 +30,13 @@ Since I have played with different TTS engines before, it only took me about two
 
 ### Known issue
 * For Parakeet, due to model/pre-trained limitation, the sentence (row) is limited to 10 seconds. Longer ones are cut off. Mimic does not have this issue
-* Both Parakeet and ttskit are slow
+* Both Parakeet and tts-mandarin are slow
 * There is also a runtime limitation for GitHub actions.
 
 ### Other Projects
-* [中文 TTS docker tool](https://github.com/privapps/docker-ttskit/tree/tool)
-* [中文 TTS GitHub Action](https://github.com/privapps/docker-ttskit/tree/action)
+* [中文 TTS docker tool](https://github.com/privapps/TTS-Mandarin/tree/docker)
+* [中文 TTS GitHub Action](https://github.com/privapps/TTS-Mandarin)
+* [English TTS GitHub Action](https://github.com/privapps/TTS-Parakeet)
 
 
 ### Donation

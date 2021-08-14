@@ -112,14 +112,10 @@ jobs:
           echo "VOICE_ID="`cat __voice__.txt` >> $GITHUB_ENV
           sudo apt-get update -y &
           sudo apt-get install lame &
-      - uses: privapps/docker-ttskit@action
+      - uses: privapps/TTS-Mandarin@v0.1
         with:
           text: ${{ github.event.issue.body }}
           voice: ${{ env.VOICE_ID }}
-      - name: compress
-        run: |
-          lame __out__.wav 
-          mv __out__.mp3 ${{ github.event.issue.number }}.mp3
       # check out branch mp3
       - uses: actions/checkout@v2
         with:
@@ -127,7 +123,7 @@ jobs:
           path: mp3
       - name: Commit files
         run: |
-          cp ${{ github.event.issue.number }}.mp3 mp3/
+          mv __out__.mp3 mp3/${{ github.event.issue.number }}.mp3
           cd mp3
           git add ${{ github.event.issue.number }}.mp3
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

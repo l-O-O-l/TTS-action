@@ -13,26 +13,26 @@
 ## Usage
 在这个项目里面，新建一个issue 以 `TTS:` (优质英文),  `TTS-F:` (快速英文) or `TTS-CN:` (中文普通话)，把需要转的文字写在 issue 里面. 几分钟以后，语音就会生成，链接会在回复里面
 
-中文里面有二十多个不同的声音， 你可以用 `TTS-CN: 1$`, `TTS-CN: 30$` 来转换不同的语音。 具体信息在 [docker/ttskit](https://github.com/privapps/docker-ttskit/tree/action)
+中文里面有几十多个不同的声音， 你可以用 `TTS-CN: 1$`, `TTS-CN: 30$` 来转换不同的语音。 具体信息在 [TTS-Mandarin](https://github.com/privapps/TTS-Mandarin)
 
 ## How
 这个项目用的都是开源内容和免费服务，采用了三个不同的引擎
 * https://github.com/iclementine/Parakeet 英文，拥有非常好的音质和效果，虽然比较慢
 * https://github.com/MycroftAI/mimic1 英文，很快，一听就知道是电脑合成的
-* https://github.com/KuangDD/ttskit 中文，音质效果不错，就是有点慢
+* https://github.com/ranchlai/mandarin-tts 中文，音质效果不错，就是有点慢,只支持汉字,不支持数字,英文
 
 一旦 issue 建立， Github Action 会触发: 首先读需要转换的文字; 然后用引擎生成语音; 再压缩成 mp3 然后 merge; 最后加上链接，关闭 issue.
 
 
 ### Known issue
 * Parakeet 英文每行有10秒钟的限制，所以要多分行 (这个有时间我自动分拆一下)
-* Parakeet and ttskit 很慢
+* Parakeet and tts-mandarin 很慢
 * GitHub actions 有运行时间的限制
 
 ### 相关项目
-* [中文 TTS docker tool](https://github.com/privapps/docker-ttskit/tree/tool)
-* [中文 TTS GitHub Action](https://github.com/privapps/docker-ttskit/tree/action)
-
+* [中文 TTS docker tool](https://github.com/privapps/TTS-Mandarin/tree/docker)
+* [中文 TTS GitHub Action](https://github.com/privapps/TTS-Mandarin)
+* [English TTS GitHub Action](https://github.com/privapps/TTS-Parakeet)
 
 ### Donation
 ```
